@@ -94,3 +94,27 @@
   form .text h3 a:hover{
     text-decoration: underline;
   }
+  
+.copybutton {
+  background-color:#4070f4;
+  color:white;
+  padding: 6px;
+  border:none;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media screen and (max-width: 350px) {
+  .wrapper {
+      padding: 15px;
+      
+  }
+
+  .wrapper h2 {
+      font-size: 18px;
+  }
+
+  .copybutton {
+      padding: 8px;
+      font-size: 14px;
+  }
+}
