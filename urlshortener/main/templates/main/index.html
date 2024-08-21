@@ -1,21 +1,24 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-    <form action="{% url "shorten_post" %}" method="post">
-        {% csrf_token %}
-        <label class="mdc-text-field mdc-text-field--outlined">
-            <span class="mdc-notched-outline">
-                <span class="mdc-notched-outline__leading"></span>
-                <span class="mdc-notched-outline__notch">
-                    <span class="mdc-floating-label" id="my-label-id">URL</span>
-                </span>
-                <span class="mdc-notched-outline__trailing"></span>
-            </span>
-            <input type="text" name="url" class="mdc-text-field__input" aria-labelledby="my-label-id">
-        </label>
-        <button class="mdc-button mdc-button--outlined" style="background-color: #069AF3; color:white; font-weight:bold;" type="submit">
-            <span class="mdc-button__ripple"></span>
-            <span class="mdc-button__label">Shorten</span>
-        </button>
-    </form>
+    <div class="wrapper">
+        <h2>Amiee URL Shortener</h2>
+        <form action="{% url "shorten_post" %}" method="post">
+            {% csrf_token %}
+            <div class="input-box">
+                <input type="text" placeholder="Enter URL" name="url">
+            </div>
+            <div class="input-box button">
+                <input type="submit" value="Shorten">
+            </div>
+            <div class="text">
+                <h5>
+                    <span style="color:#4070f4">Dear User:</span> 
+                    Welcome to Amiee, Enter your url and click shorten
+                </h5>
+            </div>
+        </form>
+    </div>
+    
 {% endblock %}
