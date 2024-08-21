@@ -1,5 +1,6 @@
 import random 
 import string 
+from django.http import Http404
 from django.utils import timezone
 from .models import LinkMapping
 
@@ -10,4 +11,8 @@ def shorten(url):
     return random_hash
 
 def load_url(url_hash):
-    return LinkMapping.objects.get(hashing=url_hash)
+    try:
+        return LinkMapping.objects.get(hashing=url_hash)
+    except LinkMapping.DoesNotExist:
+        raise Http404("Shortened URL not found")
+
