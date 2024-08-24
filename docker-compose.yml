@@ -13,9 +13,9 @@ services:
     depends_on:
       - db
     volumes:
-      - .:/code
-      - /code/staticfiles
-
+      -  ./urlshortener:/code/urlshortener
+      - /code/urlshortener/static:/code/urlshortener/static
+      - /code/urlshortener/staticfiles:/code/urlshortener/staticfiles
   db:
     image: postgres
     volumes: 
